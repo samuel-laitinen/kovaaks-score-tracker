@@ -1,12 +1,12 @@
 # KovaaK's Score Tracker
 
-Python script which reads my KovaaK's stats and shows my best score for each scenario. I built it to see all my best scores in one place. It was able to handle 537 of my runs across 134 scenarios.
+Python script which reads my KovaaK's stats and shows my best score for each scenario along with the date. I built it to see all my best scores in one place. It was able to handle 537 of my runs across 134 scenarios.
 
 ## Example Output
 
-    1w2ts Pasu Perfected Easy: 99.0
-    1w2ts reload: 78.0
-    1w4ts Voltaic: 94.0
+    1w2ts Pasu Perfected Easy: 99.0 - 2026.09.28
+    1w2ts reload: 78.0 - 2026.09.29
+    1w2ts reload smallflicks larger: 130.0 - 2026.10.02
 
 ## How to run
 
@@ -17,7 +17,7 @@ You need Python 3 and KovaaK's installed.
 
 ## How it works
 
-KovaaK's saves each run in a stats folder as CSV files. The script simply goes through each file and finds the 'Score:' and 'Scenario:' lines and keeps the highest score for each senario in a dictionary.
+KovaaK's saves each run in a stats folder as CSV files. The script simply goes through each file and finds the 'Score:' and 'Scenario:' lines and keeps the highest score for each senario in a dictionary. Then it reads the file name and splits it to get the date for that scenario.
 
 ## Planned Features
 

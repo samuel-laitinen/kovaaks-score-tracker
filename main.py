@@ -21,14 +21,18 @@ def readscores(filename):
 
 best = {}
 
+best_date = {}
 
 for name in os.listdir(folder):
     if name.endswith(".csv"):
+        parts = name.split(" - ")
+        date = parts[-1].split("-")[0]
         path = os.path.join(folder, name)
         score, scenario = readscores(path)
         if scenario not in best or score > best[scenario]:
             best[scenario] = score
+            best_date[scenario] = date
 
 for scenario, score in best.items():
-    print(f'{scenario}: {score}')
+    print(f"{scenario}: {score} - {best_date[scenario]}")
 
